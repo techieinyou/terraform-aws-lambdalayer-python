@@ -1,6 +1,10 @@
 variable "library_name" {
   type        = string
   description = "Name of the Python library to create Lambda Layer"
+  validation {
+    condition     = can(regex("^[a-zA-Z][a-zA-Z\\-\\_0-9]{1,64}$", var.library_name))
+    error_message = "Provide a valid library name. Library name must start with letter, only contain letters, numbers, dashes, or underscores and must be between 1 and 64 characters."
+  }
 }
 
 variable "layer_name" {

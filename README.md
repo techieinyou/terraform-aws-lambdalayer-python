@@ -4,7 +4,9 @@ When your Lambda need to import libraries, packaing all libraries along with you
 This module will create an AWS Lambda Layer with ANY Python library you like.   This module is published in Terraform as [**TechieInYou/lambdalayer-python/aws**](https://registry.terraform.io/modules/techieinyou/lambdalayer-python/aws/latest). 
 
 ## How this module works?
-You can assign the name of library you want to install to the variable __library_name__ .  This module will
+You can assign the name of library you want to install in the variable __library_name__ .  
+
+Once you provide the library name, this module will
 
     1. create a local folder `lambdalayer` 
     2. install the library (using pip3) in the above folder
@@ -16,7 +18,7 @@ You can assign the name of library you want to install to the variable __library
 ## Other Variables can be assigned 
 
 ### Layer Name (Optional)
-You can assign the Lambda Layer name by assigning variable __layer_name__.  If not provided, then the layer name will be **lib-python-<library-name>**.  
+You can assign the Lambda Layer name by assigning variable __layer_name__.  If not provided, then the layer name will be **lib-python-"library-name"**.  
 
 
 ### Python Runtime (Optional)
